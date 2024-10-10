@@ -1,0 +1,75 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "foreground": "lightYellow",
+          "style": "plain",
+          "template": "{{ .UserName }} ",
+          "type": "session"
+        },
+        {
+          "foreground": "cyan",
+          "properties": {
+            "style": "folder"
+          },
+          "style": "plain",
+          "template": "<#ffffff>in</> {{ .Path }} ",
+          "type": "path"
+        },
+        {
+          "foreground": "#ff94df",
+          "properties": {
+            "branch_icon": " <#ff94df><b>\ue0a0 </b></>",
+            "fetch_stash_count": true
+          },
+          "style": "plain",
+          "template": "<#ffffff>on</> {{ .HEAD }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
+          "type": "git"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "background": "#29315A",
+          "foreground": "#AEA4BF",
+          "leading_diamond": "\ue0b6",
+          "properties": {
+            "style": "austin",
+            "threshold": 150
+          },
+          "style": "diamond",
+          "template": "{{ .FormattedMs }}",
+          "trailing_diamond": "\ue0b4 ",
+          "type": "executiontime"
+        },
+        {
+          "background": "#930F0F",
+          "foreground": "#f9ebff",
+          "powerline_symbol": "\ue0b0",
+          "style": "diamond",
+          "template": " \ue654 ",
+          "type": "status"
+        },
+        {
+          "background": "#4d2fa9",
+          "foreground": "#f9ebff",
+          "leading_diamond": "\ue0b6",
+          "style": "diamond",
+          "template": "\u276f",
+          "trailing_diamond": "\ue0b4",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "final_space": true,
+  "version": 2
+}
