@@ -12,7 +12,7 @@
 # **** Variaveis *****
 # --------------------
 
-DOWNLOAD_DIR=''
+DOWNLOAD_DIR='/home/pdv/Downloads'
 
 # --------------------
 # **** Funções *******
@@ -22,7 +22,9 @@ DOWNLOAD_DIR=''
 baixar_build() {
   read -p "Informe a BUILD para download: " build
   echo "Baixando..."
-  echo "A BUILD: $build foi baixada em /home/pdv"
+  wget https://link.do.syspdv.com$build.com
+  echo "A BUILD: $build foi baixada em /pdv/Downloads"
+  wine /home/pdv/Downloads/InstaladorSysPDV_19_0_0_$build.exe
 }
 
 # Função que abre arquivos de configuração dos perifericos
@@ -30,6 +32,7 @@ configurar_perifericos() {
   read -p "Deseja configurar os perifericos?(S/n): " confirm
   if [[ "$confirm" == "" || "$confirm" == "S" || "$confirm" == "s" ]]; then
     echo "Abrindo os arquivos (setty e 90-dispositivos-rules)"
+    # Colocar o comando subl para abrir os arquivos
   else
     echo "Processo cancelado!"
   fi
