@@ -1,0 +1,37 @@
+# Unbind e rebind da tecla de recarga
+unbind r
+bind r source-file ~/.tmux.conf \; display "Reloaded ~/.tmux.conf"
+
+# Atalhos para divisão de janelas com tamanho
+bind | split-window -h -p 50
+bind - split-window -v -p 50
+
+# Lista de plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'christoomey/vim-tmux-navigator'
+set -g @plugin 'dracula/tmux'
+
+# Configurações do tema Dracula
+set -g @dracula-show-powerline true
+set -g @dracula-fixed-location "São Paulo"
+set -g @dracula-battery-label false
+set -g @dracula-no-battery-label false
+set -g @dracula-show-battery-status true
+set -g @dracula-plugins "network time battery"
+set -g @dracula-show-flags true
+set -g @dracula-show-left-icon shortname
+set -g status-position bottom
+
+# Formato de data e hora com separador customizado
+set -g @dracula-time-format "%d/%b ⚡ %H:%M"
+
+
+# Ocultar barra de status automaticamente
+# set -g status-interval 60
+# set -g status off
+
+# Inicializa TMUX plugin manager (mantenha esta linha no final do arquivo)
+run '~/.tmux/plugins/tpm/tpm'
+
+
